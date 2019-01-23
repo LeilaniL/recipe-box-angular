@@ -8,5 +8,15 @@ import { Recipe } from './models/recipe.model';
 })
 export class AppComponent {
   title = 'Recipe Box';
-  firstRecipe: Recipe = new Recipe("pb&j sandwich", "bread, peanut butter, jelly", "spread peanut butter on one slice of bread and jelly on the other. Stick together. Eat.");
+
+  recipes: Recipe[] = [
+    new Recipe("pb&j sandwich", "bread, peanut butter, jelly", "spread peanut butter on one slice of bread and jelly on the other. Stick together. Eat."),
+    new Recipe("Ham & Cheese Sandwich", "bread, ham, cheese", "Put a piece of ham and cheese between two pieces of bread and enjoy.")
+  ]
+  // selectedRecipe = null;
+
+  showDetails(clickedRecipe) {
+    console.log(clickedRecipe);
+    clickedRecipe.selected = true;
+  }
 }
